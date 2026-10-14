@@ -1,0 +1,1384 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. Create a NumPy array from [10, 20, 30, 40, 50]. Display its shape, size, and data type."
+      ],
+      "metadata": {
+        "id": "VxRrysaIEdVR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1b248101",
+        "outputId": "f3a82b49-a028-4338-e387-f5ac8a481fa5"
+      },
+      "source": [
+        "import numpy as np\n",
+        "arr = np.array([10, 20, 30, 40, 50])\n",
+        "print(f\"Array: {arr}\")\n",
+        "print(f\"Shape: {arr.shape}\")\n",
+        "print(f\"Size: {arr.size}\")\n",
+        "print(f\"Data type: {arr.dtype}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array: [10 20 30 40 50]\n",
+            "Shape: (5,)\n",
+            "Size: 5\n",
+            "Data type: int64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2.\tCreate a 3 × 4 array containing numbers from 1 to 12."
+      ],
+      "metadata": {
+        "id": "I6NhyQisEwMI"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ef89ff4b",
+        "outputId": "a6f3eda4-443c-4dbd-cb5d-c31d8791e90b"
+      },
+      "source": [
+        "import numpy as np\n",
+        "array_3x4 = np.arange(1, 13).reshape(3, 4)\n",
+        "print(array_3x4)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 1  2  3  4]\n",
+            " [ 5  6  7  8]\n",
+            " [ 9 10 11 12]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3.\tCreate an array of zeros, an array of ones, and an identity matrix."
+      ],
+      "metadata": {
+        "id": "8jK-z_mhFknK"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "b51090ba",
+        "outputId": "8b8faaa0-23d4-4dd9-c603-0d31895a50c5"
+      },
+      "source": [
+        "import numpy as np\n",
+        "zeros_array = np.zeros((2, 3))\n",
+        "print(\"Array of Zeros:\")\n",
+        "print(zeros_array)\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "ones_array = np.ones((3, 2))\n",
+        "print(\"Array of Ones:\")\n",
+        "print(ones_array)\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "identity_matrix = np.identity(4)\n",
+        "print(\"Identity Matrix:\")\n",
+        "print(identity_matrix)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array of Zeros:\n",
+            "[[0. 0. 0.]\n",
+            " [0. 0. 0.]]\n",
+            "\n",
+            "\n",
+            "Array of Ones:\n",
+            "[[1. 1.]\n",
+            " [1. 1.]\n",
+            " [1. 1.]]\n",
+            "\n",
+            "\n",
+            "Identity Matrix:\n",
+            "[[1. 0. 0. 0.]\n",
+            " [0. 1. 0. 0.]\n",
+            " [0. 0. 1. 0.]\n",
+            " [0. 0. 0. 1.]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4.\tGenerate all even numbers between 10 and 50 using np.arange()."
+      ],
+      "metadata": {
+        "id": "I1VMthERF3to"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "71034b91",
+        "outputId": "53deb533-fc10-41b1-a418-305406af1d7b"
+      },
+      "source": [
+        "import numpy as np\n",
+        "even_numbers = np.arange(10, 51, 2)\n",
+        "print(even_numbers)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5.\tCreate an array of 10 equally spaced numbers between 0 and 1 using np.linspace()."
+      ],
+      "metadata": {
+        "id": "siUNeFZsGCZL"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5f3bdcfc",
+        "outputId": "fd836a8a-c1ab-4ae2-cccb-2b64531fef73"
+      },
+      "source": [
+        "import numpy as np\n",
+        "equally_spaced_numbers = np.linspace(0, 1, 10)\n",
+        "print(equally_spaced_numbers)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0.         0.11111111 0.22222222 0.33333333 0.44444444 0.55555556\n",
+            " 0.66666667 0.77777778 0.88888889 1.        ]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6.\tGiven two NumPy arrays, perform element-wise addition, subtraction, multiplication, and division."
+      ],
+      "metadata": {
+        "id": "rpFKYBnGGOSP"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "936c73bf",
+        "outputId": "a8156a00-3225-496a-f8e7-69e0a2f467f8"
+      },
+      "source": [
+        "import numpy as np\n",
+        "arr1 = np.array([1, 2, 3, 4, 5])\n",
+        "arr2 = np.array([6, 7, 8, 9, 10])\n",
+        "\n",
+        "print(f\"Array 1: {arr1}\")\n",
+        "print(f\"Array 2: {arr2}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "addition_result = arr1 + arr2\n",
+        "print(f\"Addition: {addition_result}\")\n",
+        "\n",
+        "subtraction_result = arr2 - arr1\n",
+        "print(f\"Subtraction: {subtraction_result}\")\n",
+        "\n",
+        "multiplication_result = arr1 * arr2\n",
+        "print(f\"Multiplication: {multiplication_result}\")\n",
+        "\n",
+        "division_result = arr2 / arr1\n",
+        "print(f\"Division: {division_result}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array 1: [1 2 3 4 5]\n",
+            "Array 2: [ 6  7  8  9 10]\n",
+            "\n",
+            "\n",
+            "Addition: [ 7  9 11 13 15]\n",
+            "Subtraction: [5 5 5 5 5]\n",
+            "Multiplication: [ 6 14 24 36 50]\n",
+            "Division: [6.         3.5        2.66666667 2.25       2.        ]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7.\tCalculate the square and cube of every element in a NumPy array."
+      ],
+      "metadata": {
+        "id": "y44rXzO2GfSI"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2be9b3ad",
+        "outputId": "cbbe0260-cd41-45ea-b24a-fbbd635c27ee"
+      },
+      "source": [
+        "import numpy as np\n",
+        "example_array = np.array([1, 2, 3, 4, 5])\n",
+        "\n",
+        "print(f\"Original Array: {example_array}\")\n",
+        "\n",
+        "square_array = example_array ** 2\n",
+        "print(f\"Square of elements: {square_array}\")\n",
+        "\n",
+        "cube_array = example_array ** 3\n",
+        "print(f\"Cube of elements: {cube_array}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array: [1 2 3 4 5]\n",
+            "Square of elements: [ 1  4  9 16 25]\n",
+            "Cube of elements: [  1   8  27  64 125]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "8.\tIncrease every element of an array by 15%."
+      ],
+      "metadata": {
+        "id": "P6fiy_UIGri8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "63102194",
+        "outputId": "c3b0b04e-0eef-483b-e7f6-963c4afecaa2"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "# Using the previously defined example_array\n",
+        "# example_array = np.array([1, 2, 3, 4, 5])\n",
+        "\n",
+        "increased_array = example_array * 1.15\n",
+        "\n",
+        "print(f\"Original Array: {example_array}\")\n",
+        "print(f\"Array after 15% increase: {increased_array}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array: [1 2 3 4 5]\n",
+            "Array after 15% increase: [1.15 2.3  3.45 4.6  5.75]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "9.\tGiven two arrays, find their element-wise maximum and minimum."
+      ],
+      "metadata": {
+        "id": "5pQGfBokGwtU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "e88e70fe",
+        "outputId": "8f769be5-4c30-4ee0-e194-0214e8fd3ee8"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "array_a = np.array([1, 5, 2, 8, 3])\n",
+        "array_b = np.array([4, 2, 7, 1, 9])\n",
+        "\n",
+        "print(f\"Array A: {array_a}\")\n",
+        "print(f\"Array B: {array_b}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "elementwise_maximum = np.maximum(array_a, array_b)\n",
+        "print(f\"Element-wise Maximum: {elementwise_maximum}\")\n",
+        "\n",
+        "elementwise_minimum = np.minimum(array_a, array_b)\n",
+        "print(f\"Element-wise Minimum: {elementwise_minimum}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array A: [1 5 2 8 3]\n",
+            "Array B: [4 2 7 1 9]\n",
+            "\n",
+            "\n",
+            "Element-wise Maximum: [4 5 7 8 9]\n",
+            "Element-wise Minimum: [1 2 2 1 3]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "10.\tCreate an array from 0 to 20 and extract the first five elements, last five elements, elements from index 5 to 15, and every second element."
+      ],
+      "metadata": {
+        "id": "GUUWMxONG9zi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3ff38b4a",
+        "outputId": "65bfb269-151c-4af7-a936-3356426c71c4"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "original_array = np.arange(21)\n",
+        "print(f\"Original Array: {original_array}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "first_five = original_array[:5]\n",
+        "print(f\"First five elements: {first_five}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "last_five = original_array[-5:]\n",
+        "print(f\"Last five elements: {last_five}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "elements_5_to_15 = original_array[5:16]\n",
+        "print(f\"Elements from index 5 to 15: {elements_5_to_15}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "every_second_element = original_array[::2]\n",
+        "print(f\"Every second element: {every_second_element}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]\n",
+            "\n",
+            "\n",
+            "First five elements: [0 1 2 3 4]\n",
+            "\n",
+            "\n",
+            "Last five elements: [16 17 18 19 20]\n",
+            "\n",
+            "\n",
+            "Elements from index 5 to 15: [ 5  6  7  8  9 10 11 12 13 14 15]\n",
+            "\n",
+            "\n",
+            "Every second element: [ 0  2  4  6  8 10 12 14 16 18 20]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "11.\tReplace the first five elements of an array with 100."
+      ],
+      "metadata": {
+        "id": "4c0MDTmYHItp"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "c598663d",
+        "outputId": "538013c6-7a41-4b2f-ef30-7b7e5bffafb2"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "my_array = np.arange(1, 11)\n",
+        "print(f\"Original Array: {my_array}\")\n",
+        "\n",
+        "my_array[:5] = 100\n",
+        "print(f\"Array after replacing first five elements: {my_array}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array: [ 1  2  3  4  5  6  7  8  9 10]\n",
+            "Array after replacing first five elements: [100 100 100 100 100   6   7   8   9  10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "12.\tCreate an array and demonstrate the difference between a slice/view and a copy."
+      ],
+      "metadata": {
+        "id": "9vD9zH7nHrS2"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "52b5903d",
+        "outputId": "ec0b7f6e-e300-4314-bdf9-bf25a9c33b5a"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "original_array = np.array([1, 2, 3, 4, 5])\n",
+        "print(f\"Original Array: {original_array}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "array_view = original_array[0:3]\n",
+        "print(f\"View of the array (first 3 elements): {array_view}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "array_view[0] = 99\n",
+        "print(f\"View after modification: {array_view}\")\n",
+        "print(f\"Original Array after view modification: {original_array}\")\n",
+        "\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "original_array_for_copy = np.array([10, 20, 30, 40, 50])\n",
+        "array_copy = original_array_for_copy.copy()\n",
+        "print(f\"Original Array for copy: {original_array_for_copy}\")\n",
+        "print(f\"Copy of the array: {array_copy}\")\n",
+        "\n",
+        "array_copy[0] = 1000\n",
+        "print(f\"Copy after modification: {array_copy}\")\n",
+        "print(f\"Original Array after copy modification: {original_array_for_copy}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array: [1 2 3 4 5]\n",
+            "\n",
+            "\n",
+            "View of the array (first 3 elements): [1 2 3]\n",
+            "\n",
+            "\n",
+            "View after modification: [99  2  3]\n",
+            "Original Array after view modification: [99  2  3  4  5]\n",
+            "\n",
+            "\n",
+            "Original Array for copy: [10 20 30 40 50]\n",
+            "Copy of the array: [10 20 30 40 50]\n",
+            "Copy after modification: [1000   20   30   40   50]\n",
+            "Original Array after copy modification: [10 20 30 40 50]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "13.\tReverse a NumPy array using slicing."
+      ],
+      "metadata": {
+        "id": "TPqgWWYBHuhW"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ba67c0b0",
+        "outputId": "ba1f65a1-14b3-44cb-fc0f-cf83d1deaa50"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "original_array = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])\n",
+        "print(f\"Original Array: {original_array}\")\n",
+        "\n",
+        "reversed_array = original_array[::-1]\n",
+        "print(f\"Reversed Array: {reversed_array}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array: [ 1  2  3  4  5  6  7  8  9 10]\n",
+            "Reversed Array: [10  9  8  7  6  5  4  3  2  1]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "14.\tCreate the matrix [[10,20,30],[40,50,60],[70,80,90]]. Extract the second row, third column, and element 50."
+      ],
+      "metadata": {
+        "id": "E74js2rjIRsp"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "68211121",
+        "outputId": "c42754ef-1aa0-40e5-fd31-22ac19fe9900"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "matrix = np.array([[10, 20, 30],\n",
+        "                   [40, 50, 60],\n",
+        "                   [70, 80, 90]])\n",
+        "print(f\"Original Matrix:\\n{matrix}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "second_row = matrix[1, :]\n",
+        "print(f\"Second row: {second_row}\")\n",
+        "\n",
+        "third_column = matrix[:, 2]\n",
+        "print(f\"Third column: {third_column}\")\n",
+        "\n",
+        "element_50 = matrix[1, 1]\n",
+        "print(f\"Element 50: {element_50}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Matrix:\n",
+            "[[10 20 30]\n",
+            " [40 50 60]\n",
+            " [70 80 90]]\n",
+            "\n",
+            "\n",
+            "Second row: [40 50 60]\n",
+            "Third column: [30 60 90]\n",
+            "Element 50: 50\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "15.\tFrom the matrix above, extract the sub-matrix [[20,30],[50,60]]."
+      ],
+      "metadata": {
+        "id": "OvJ9TxPRKU24"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "e6bb747c",
+        "outputId": "410f6af3-2d1d-4656-c270-904d5126d4f2"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "\n",
+        "sub_matrix = matrix[0:2, 1:3]\n",
+        "print(f\"Extracted Sub-matrix:\\n{sub_matrix}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Extracted Sub-matrix:\n",
+            "[[20 30]\n",
+            " [50 60]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "16.\tCreate a 5 × 5 matrix containing 1–25 and extract the first row, last column, middle element, and top-left 3 × 3 matrix."
+      ],
+      "metadata": {
+        "id": "ZmqCrkOEKac7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0291ced0",
+        "outputId": "b6757658-f179-4480-bb08-122aebf7d535"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "matrix_5x5 = np.arange(1, 26).reshape(5, 5)\n",
+        "print(f\"Original 5x5 Matrix:\\n{matrix_5x5}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "first_row = matrix_5x5[0, :]\n",
+        "print(f\"First Row: {first_row}\")\n",
+        "\n",
+        "last_column = matrix_5x5[:, -1]\n",
+        "print(f\"Last Column: {last_column}\")\n",
+        "\n",
+        "middle_element = matrix_5x5[2, 2]\n",
+        "print(f\"Middle Element: {middle_element}\")\n",
+        "\n",
+        "top_left_3x3 = matrix_5x5[0:3, 0:3]\n",
+        "print(f\"Top-Left 3x3 Matrix:\\n{top_left_3x3}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original 5x5 Matrix:\n",
+            "[[ 1  2  3  4  5]\n",
+            " [ 6  7  8  9 10]\n",
+            " [11 12 13 14 15]\n",
+            " [16 17 18 19 20]\n",
+            " [21 22 23 24 25]]\n",
+            "\n",
+            "\n",
+            "First Row: [1 2 3 4 5]\n",
+            "Last Column: [ 5 10 15 20 25]\n",
+            "Middle Element: 13\n",
+            "Top-Left 3x3 Matrix:\n",
+            "[[ 1  2  3]\n",
+            " [ 6  7  8]\n",
+            " [11 12 13]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "17.\tCreate an array containing 1–12 and reshape it into a 3 × 4 matrix.\n"
+      ],
+      "metadata": {
+        "id": "lc78mfufKdf9"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cc21cbd1",
+        "outputId": "b5d8d6d8-5f91-4c99-b1cc-4335b1211ab7"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "array_1_to_12 = np.arange(1, 13)\n",
+        "print(f\"Original Array (1-12): {array_1_to_12}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "reshaped_matrix = array_1_to_12.reshape(3, 4)\n",
+        "print(f\"Reshaped 3x4 Matrix:\\n{reshaped_matrix}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array (1-12): [ 1  2  3  4  5  6  7  8  9 10 11 12]\n",
+            "\n",
+            "\n",
+            "Reshaped 3x4 Matrix:\n",
+            "[[ 1  2  3  4]\n",
+            " [ 5  6  7  8]\n",
+            " [ 9 10 11 12]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "18.\tReshape a 1-D array into a 2 × 5 matrix."
+      ],
+      "metadata": {
+        "id": "uaN7VORsKm9V"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0d751652",
+        "outputId": "e3e87e22-1ed2-4593-8f2c-94aee5446177"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "array_1d = np.arange(1, 11)\n",
+        "print(f\"Original 1-D Array: {array_1d}\")\n",
+        "\n",
+        "reshaped_2x5_matrix = array_1d.reshape(2, 5)\n",
+        "print(f\"\\nReshaped 2x5 Matrix:\\n{reshaped_2x5_matrix}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original 1-D Array: [ 1  2  3  4  5  6  7  8  9 10]\n",
+            "\n",
+            "Reshaped 2x5 Matrix:\n",
+            "[[ 1  2  3  4  5]\n",
+            " [ 6  7  8  9 10]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "19.\tConvert a 3 × 4 matrix into a 4 × 3 matrix using transpose."
+      ],
+      "metadata": {
+        "id": "CLL9ipZKKp19"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "a3b1d102",
+        "outputId": "a5c77629-0022-4ac1-f21a-732e19ba414a"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "matrix_3x4 = np.arange(1, 13).reshape(3, 4)\n",
+        "print(f\"Original 3x4 Matrix:\\n{matrix_3x4}\")\n",
+        "\n",
+        "matrix_4x3 = matrix_3x4.transpose()\n",
+        "print(f\"\\nTransposed 4x3 Matrix:\\n{matrix_4x3}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original 3x4 Matrix:\n",
+            "[[ 1  2  3  4]\n",
+            " [ 5  6  7  8]\n",
+            " [ 9 10 11 12]]\n",
+            "\n",
+            "Transposed 4x3 Matrix:\n",
+            "[[ 1  5  9]\n",
+            " [ 2  6 10]\n",
+            " [ 3  7 11]\n",
+            " [ 4  8 12]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "20.\tUse transpose() and swapaxes() on a 3-D array."
+      ],
+      "metadata": {
+        "id": "jgOGuPGLKqSF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7bc12d07",
+        "outputId": "af06f26a-06ea-47fe-f0a1-d1a2de3e074c"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "array_3d = np.arange(1, 13).reshape(2, 3, 2)\n",
+        "print(f\"Original 3-D Array (shape: {array_3d.shape}):\\n{array_3d}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "transposed_array = array_3d.transpose()\n",
+        "print(f\"Transposed Array (default, shape: {transposed_array.shape}):\\n{transposed_array}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "transposed_axes_0_1 = array_3d.transpose((1, 0, 2))\n",
+        "print(f\"Transposed Array (axes 0 and 1 swapped, shape: {transposed_axes_0_1.shape}):\\n{transposed_axes_0_1}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "\n",
+        "swapped_axes_0_1 = array_3d.swapaxes(0, 1)\n",
+        "print(f\"Array after swapaxes(0, 1) (shape: {swapped_axes_0_1.shape}):\\n{swapped_axes_0_1}\")\n",
+        "print(\"\\n\")\n",
+        "\n",
+        "swapped_axes_0_2 = array_3d.swapaxes(0, 2)\n",
+        "print(f\"Array after swapaxes(0, 2) (shape: {swapped_axes_0_2.shape}):\\n{swapped_axes_0_2}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original 3-D Array (shape: (2, 3, 2)):\n",
+            "[[[ 1  2]\n",
+            "  [ 3  4]\n",
+            "  [ 5  6]]\n",
+            "\n",
+            " [[ 7  8]\n",
+            "  [ 9 10]\n",
+            "  [11 12]]]\n",
+            "\n",
+            "\n",
+            "Transposed Array (default, shape: (2, 3, 2)):\n",
+            "[[[ 1  7]\n",
+            "  [ 3  9]\n",
+            "  [ 5 11]]\n",
+            "\n",
+            " [[ 2  8]\n",
+            "  [ 4 10]\n",
+            "  [ 6 12]]]\n",
+            "\n",
+            "\n",
+            "Transposed Array (axes 0 and 1 swapped, shape: (3, 2, 2)):\n",
+            "[[[ 1  2]\n",
+            "  [ 7  8]]\n",
+            "\n",
+            " [[ 3  4]\n",
+            "  [ 9 10]]\n",
+            "\n",
+            " [[ 5  6]\n",
+            "  [11 12]]]\n",
+            "\n",
+            "\n",
+            "Array after swapaxes(0, 1) (shape: (3, 2, 2)):\n",
+            "[[[ 1  2]\n",
+            "  [ 7  8]]\n",
+            "\n",
+            " [[ 3  4]\n",
+            "  [ 9 10]]\n",
+            "\n",
+            " [[ 5  6]\n",
+            "  [11 12]]]\n",
+            "\n",
+            "\n",
+            "Array after swapaxes(0, 2) (shape: (2, 3, 2)):\n",
+            "[[[ 1  7]\n",
+            "  [ 3  9]\n",
+            "  [ 5 11]]\n",
+            "\n",
+            " [[ 2  8]\n",
+            "  [ 4 10]\n",
+            "  [ 6 12]]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "21.\tCreate two 3 × 3 matrices and perform element-wise addition and multiplication."
+      ],
+      "metadata": {
+        "id": "tiiZ2YSsKxny"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8cea1eb2",
+        "outputId": "9de2ba33-ddc2-4551-8b1e-cfc764bc2f31"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "matrix1 = np.arange(1, 10).reshape(3, 3)\n",
+        "matrix2 = np.arange(10, 19).reshape(3, 3)\n",
+        "\n",
+        "print(f\"Matrix 1:\\n{matrix1}\")\n",
+        "print(f\"\\nMatrix 2:\\n{matrix2}\")\n",
+        "\n",
+        "addition_result = matrix1 + matrix2\n",
+        "print(f\"\\nElement-wise Addition:\\n{addition_result}\")\n",
+        "\n",
+        "multiplication_result = matrix1 * matrix2\n",
+        "print(f\"\\nElement-wise Multiplication:\\n{multiplication_result}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Matrix 1:\n",
+            "[[1 2 3]\n",
+            " [4 5 6]\n",
+            " [7 8 9]]\n",
+            "\n",
+            "Matrix 2:\n",
+            "[[10 11 12]\n",
+            " [13 14 15]\n",
+            " [16 17 18]]\n",
+            "\n",
+            "Element-wise Addition:\n",
+            "[[11 13 15]\n",
+            " [17 19 21]\n",
+            " [23 25 27]]\n",
+            "\n",
+            "Element-wise Multiplication:\n",
+            "[[ 10  22  36]\n",
+            " [ 52  70  90]\n",
+            " [112 136 162]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "22.\tCalculate the matrix product of two compatible matrices using np.dot()."
+      ],
+      "metadata": {
+        "id": "Xc76wfYlK6Fc"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4c5d0ff8",
+        "outputId": "b56f5858-1184-4293-ecad-62c74b598000"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "matrix_A = np.array([[1, 2], [3, 4]])\n",
+        "matrix_B = np.array([[5, 6], [7, 8]])\n",
+        "\n",
+        "print(f\"Matrix A:\\n{matrix_A}\")\n",
+        "print(f\"\\nMatrix B:\\n{matrix_B}\")\n",
+        "\n",
+        "matrix_product = np.dot(matrix_A, matrix_B)\n",
+        "\n",
+        "print(f\"\\nMatrix Product (A @ B):\\n{matrix_product}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Matrix A:\n",
+            "[[1 2]\n",
+            " [3 4]]\n",
+            "\n",
+            "Matrix B:\n",
+            "[[5 6]\n",
+            " [7 8]]\n",
+            "\n",
+            "Matrix Product (A @ B):\n",
+            "[[19 22]\n",
+            " [43 50]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "23.\tFind the transpose of a matrix and calculate its dot product with the original matrix."
+      ],
+      "metadata": {
+        "id": "A1uK0ljKK9gq"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0cb4adda",
+        "outputId": "ef176cf6-456a-49e5-a8fa-c233711bbb5b"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "original_matrix = np.array([[1, 2, 3],\n",
+        "                            [4, 5, 6],\n",
+        "                            [7, 8, 9]])\n",
+        "\n",
+        "print(f\"Original Matrix:\\n{original_matrix}\")\n",
+        "\n",
+        "transposed_matrix = original_matrix.T\n",
+        "print(f\"\\nTransposed Matrix:\\n{transposed_matrix}\")\n",
+        "\n",
+        "dot_product_result = np.dot(original_matrix, transposed_matrix)\n",
+        "print(f\"\\nDot Product (Original @ Transpose):\\n{dot_product_result}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Matrix:\n",
+            "[[1 2 3]\n",
+            " [4 5 6]\n",
+            " [7 8 9]]\n",
+            "\n",
+            "Transposed Matrix:\n",
+            "[[1 4 7]\n",
+            " [2 5 8]\n",
+            " [3 6 9]]\n",
+            "\n",
+            "Dot Product (Original @ Transpose):\n",
+            "[[ 14  32  50]\n",
+            " [ 32  77 122]\n",
+            " [ 50 122 194]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "24.\tCalculate the square root of every element in an array using NumPy."
+      ],
+      "metadata": {
+        "id": "mFxgQf3oLFbx"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "d46ee806",
+        "outputId": "23bcb54a-b1be-4368-8edf-28577e8c13ee"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "example_array = np.array([1, 4, 9, 16, 25, 36])\n",
+        "print(f\"Original Array: {example_array}\")\n",
+        "\n",
+        "square_root_array = np.sqrt(example_array)\n",
+        "print(f\"\\nSquare Root of Elements: {square_root_array}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array: [ 1  4  9 16 25 36]\n",
+            "\n",
+            "Square Root of Elements: [1. 2. 3. 4. 5. 6.]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "25.\tCalculate e^x for every element of an array."
+      ],
+      "metadata": {
+        "id": "x4A8c0isLIhf"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "eaec5d33"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "example_array = np.array([0, 1, 2, 3])\n",
+        "print(f\"Original Array: {example_array}\")\n",
+        "\n",
+        "exp_array = np.exp(example_array)\n",
+        "print(f\"\\ne^x for each element: {exp_array}\")"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "26.\tGenerate a random array and calculate its square root, exponential, and absolute values."
+      ],
+      "metadata": {
+        "id": "HGTsT8A_LPB2"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "52bfcb55",
+        "outputId": "d1e7b872-bb6e-4b98-bf37-f356d968c11b"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "random_array = np.random.rand(5) * 10 + 1\n",
+        "print(f\"Original Random Array: {random_array}\")\n",
+        "\n",
+        "square_root_vals = np.sqrt(random_array)\n",
+        "print(f\"\\nSquare Root: {square_root_vals}\")\n",
+        "\n",
+        "exp_vals = np.exp(random_array)\n",
+        "print(f\"\\nExponential (e^x): {exp_vals}\")\n",
+        "\n",
+        "abs_vals = np.abs(random_array)\n",
+        "print(f\"\\nAbsolute Values: {abs_vals}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Random Array: [10.40522987  8.83541019  1.9036845   9.17524684  6.56803741]\n",
+            "\n",
+            "Square Root: [3.22571386 2.97244179 1.37974074 3.02906699 2.56281825]\n",
+            "\n",
+            "Exponential (e^x): [3.30319276e+04 6.87337266e+03 6.71057409e+00 9.65515108e+03\n",
+            " 7.11971162e+02]\n",
+            "\n",
+            "Absolute Values: [10.40522987  8.83541019  1.9036845   9.17524684  6.56803741]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "27.\tGenerate two random arrays and find their element-wise maximum."
+      ],
+      "metadata": {
+        "id": "3iX9iT6oLTpn"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ab90264b",
+        "outputId": "aee81d0d-e590-40cf-a3bb-824da7f05ab9"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "array1 = np.random.rand(5)\n",
+        "array2 = np.random.rand(5)\n",
+        "\n",
+        "print(f\"Array 1: {array1}\")\n",
+        "print(f\"Array 2: {array2}\")\n",
+        "\n",
+        "elementwise_max = np.maximum(array1, array2)\n",
+        "print(f\"\\nElement-wise Maximum: {elementwise_max}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array 1: [0.75353018 0.68353473 0.09709401 0.47780243 0.40818245]\n",
+            "Array 2: [0.31193237 0.14574835 0.71699808 0.1434873  0.67428522]\n",
+            "\n",
+            "Element-wise Maximum: [0.75353018 0.68353473 0.71699808 0.47780243 0.67428522]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "28.\tGiven marks = np.array([35,72,48,90,55,28]), replace marks below 40 with 0 using np.where()."
+      ],
+      "metadata": {
+        "id": "9n5xra6yLY6P"
+      }
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2591ac7f",
+        "outputId": "6d0f2ef4-4b2b-4939-d81f-c0e3bb73cac3"
+      },
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "marks = np.array([35, 72, 48, 90, 55, 28])\n",
+        "print(f\"Original marks: {marks}\")\n",
+        "\n",
+        "modified_marks = np.where(marks < 40, 0, marks)\n",
+        "print(f\"Modified marks (below 40 replaced with 0): {modified_marks}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original marks: [35 72 48 90 55 28]\n",
+            "Modified marks (below 40 replaced with 0): [ 0 72 48 90 55  0]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
