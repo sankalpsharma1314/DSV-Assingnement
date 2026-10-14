@@ -1,0 +1,1270 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "vtx7SXb7SpIt"
+      },
+      "outputs": [],
+      "source": [
+        "import pandas as pd\n",
+        "from pandas import Series"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 1\n",
+        "sales = pd.Series([120, 150, 180, 210])"
+      ],
+      "metadata": {
+        "id": "FcY_3RftZt3n"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 2\n",
+        "marks = Series([72, 81, 69, 90])\n",
+        "marks.values"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sGG4qVnFZwxZ",
+        "outputId": "c24dc54b-5839-48f0-923c-33ea173df675"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([72, 81, 69, 90])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 47
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 3\n",
+        "marks.index"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "979spu_UZy3z",
+        "outputId": "1876a8df-ac31-49a6-b236-74562f247282"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "RangeIndex(start=0, stop=4, step=1)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 48
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 4\n",
+        "pd.Series([28, 31, 30, 29], index=['Mon', 'Tue', 'Wed', 'Thu'])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 209
+        },
+        "id": "7wvRDJ8cZ0_z",
+        "outputId": "c1bec871-c544-421e-b7d4-c392b311f03e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Mon    28\n",
+              "Tue    31\n",
+              "Wed    30\n",
+              "Thu    29\n",
+              "dtype: int64"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>Mon</th>\n",
+              "      <td>28</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Tue</th>\n",
+              "      <td>31</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Wed</th>\n",
+              "      <td>30</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Thu</th>\n",
+              "      <td>29</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> int64</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 49
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 5\n",
+        "population = Series([35, 42, 31], index=['Delhi', 'Mumbai', 'Jaipur'])\n",
+        "population['Jaipur']"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pcA62XBsZ3EU",
+        "outputId": "9e861d34-2d0b-4f90-b8f2-c6723b123e82"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "np.int64(31)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 50
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 6\n",
+        "score = Series([35, 68, 44, 79, 52])\n",
+        "score[score > 50]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 178
+        },
+        "id": "_KXTskGmaBeD",
+        "outputId": "7cbb7470-fbf4-42f9-dece-e1855fd88743"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "1    68\n",
+              "3    79\n",
+              "4    52\n",
+              "dtype: int64"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>68</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>79</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>52</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> int64</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 51
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 7\n",
+        "subjects = Series([76, 83, 91], index=['Physics', 'Chemistry', 'Maths'])\n",
+        "'Chemistry' in subjects"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zA6yxUCmaG7O",
+        "outputId": "8b589192-cf54-4eb8-960e-a6247e6e5377"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "True"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 52
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 8\n",
+        "s = Series([18, 45, 27, 61], index=['P', 'Q', 'R', 'S'])\n",
+        "s.to_dict()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sRIys2DNaK4S",
+        "outputId": "1ff9eb14-8a9a-48d5-f21a-c4cac25fe483"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'P': 18, 'Q': 45, 'R': 27, 'S': 61}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 53
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 9\n",
+        "prices = {'Pen': 10, 'Notebook': 55, 'Bag': 700}\n",
+        "price_series = pd.Series(prices)"
+      ],
+      "metadata": {
+        "id": "-saf47z0aSgW"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Question 10\n",
+        "The dictionary keys become the Series index."
+      ],
+      "metadata": {
+        "id": "6YXawgx3aX9e"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 11\n",
+        "data = {'A': 10, 'B': 20, 'C': 30}; s = Series(data, index=['A', 'B', 'C', 'D'])\n",
+        "# Ans : Label 'D'."
+      ],
+      "metadata": {
+        "id": "6QPzcEZPaZt6"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 12\n",
+        "s = Series({'W': 5, 'X': 10, 'Y': 15}, index=['W', 'X', 'Y', 'Z'])\n",
+        "pd.isnull(s)  # or s.isnull()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 209
+        },
+        "id": "VbqxJmKJak0E",
+        "outputId": "cd43a911-7e2b-4b18-c272-bb261a490827"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "W    False\n",
+              "X    False\n",
+              "Y    False\n",
+              "Z     True\n",
+              "dtype: bool"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>W</th>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>X</th>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Y</th>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Z</th>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> bool</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 56
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 13\n",
+        "s = Series({'W': 5, 'X': 10, 'Y': 15}, index=['W', 'X', 'Y', 'Z'])\n",
+        "pd.notnull(s)  # or s.notnull()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 209
+        },
+        "id": "eUkSPFgiaorc",
+        "outputId": "955b4df6-e816-4246-8ec2-fb11c76d070b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "W     True\n",
+              "X     True\n",
+              "Y     True\n",
+              "Z    False\n",
+              "dtype: bool"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>W</th>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>X</th>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Y</th>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Z</th>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> bool</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 57
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 14\n",
+        "sales.name = 'Monthly Sales'"
+      ],
+      "metadata": {
+        "id": "DILoaTQtas_3"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 15\n",
+        "sales.index.name = 'Month'"
+      ],
+      "metadata": {
+        "id": "V6sQNf4DavMN"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 16\n",
+        "s = Series([18, 45, 27, 61], index=['P', 'Q', 'R', 'S'])\n",
+        "s[s > 30]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 147
+        },
+        "id": "LaoKZhhJa0AB",
+        "outputId": "6f810276-0be4-48cd-a36e-42032b0160e9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Q    45\n",
+              "S    61\n",
+              "dtype: int64"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>Q</th>\n",
+              "      <td>45</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>S</th>\n",
+              "      <td>61</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> int64</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 60
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 17\n",
+        "s = Series([500, 600, 700], index=['East', 'West', 'North'])\n",
+        "#'West' in s and 500 in s."
+      ],
+      "metadata": {
+        "id": "AdcPS9Ora5nV"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 18\n",
+        "city_data = {'Delhi': 80, 'Pune': 65, 'Kochi': 70}\n",
+        "pd.Series(city_data, index=['Delhi', 'Kochi', 'Pune', 'Chennai'])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 209
+        },
+        "id": "O2-4l2hSbA-a",
+        "outputId": "3d9a6947-8bb5-4abf-fb50-d1cb007a5570"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Delhi      80.0\n",
+              "Kochi      70.0\n",
+              "Pune       65.0\n",
+              "Chennai     NaN\n",
+              "dtype: float64"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>Delhi</th>\n",
+              "      <td>80.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Kochi</th>\n",
+              "      <td>70.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Pune</th>\n",
+              "      <td>65.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Chennai</th>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> float64</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 62
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 19\n",
+        "s = Series({'W': 5, 'X': 10, 'Y': 15}, index=['W', 'X', 'Y', 'Z'])\n",
+        "pd.isnull(s)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 209
+        },
+        "id": "9cbj1TE_bG0d",
+        "outputId": "fd677b45-f840-4ec2-c5d9-fa0d3eaada05"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "W    False\n",
+              "X    False\n",
+              "Y    False\n",
+              "Z     True\n",
+              "dtype: bool"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>W</th>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>X</th>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Y</th>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Z</th>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> bool</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 63
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 20\n",
+        "pd.notnull(s)\n",
+        "# W: True (contains value 5)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 209
+        },
+        "id": "Gj54hGehgMOy",
+        "outputId": "90b6c7b0-091f-4d30-b570-a3ac1023c3fa"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "W     True\n",
+              "X     True\n",
+              "Y     True\n",
+              "Z    False\n",
+              "dtype: bool"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>W</th>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>X</th>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Y</th>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Z</th>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> bool</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 64
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 21\n",
+        "s1 = Series([10, 20, 30], index=['A', 'B', 'C'])\n",
+        "s2 = Series([1, 2, 3], index=['C', 'A', 'B'])\n",
+        "s1+s2"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 178
+        },
+        "id": "5E5VrxICgdEv",
+        "outputId": "e9b1f024-1773-4629-9dde-67edd19fb218"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "A    12\n",
+              "B    23\n",
+              "C    31\n",
+              "dtype: int64"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>A</th>\n",
+              "      <td>12</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>B</th>\n",
+              "      <td>23</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>C</th>\n",
+              "      <td>31</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> int64</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 65
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 22\n",
+        "s1 = Series({'A': 12, 'B': 18})\n",
+        "s2 = Series({'B': 5, 'C': 9})\n",
+        "s1 + s2"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 178
+        },
+        "id": "6RPEpKdzbOY3",
+        "outputId": "6fd8e8f0-1198-4f78-b6a3-fbdf98322216"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "A     NaN\n",
+              "B    23.0\n",
+              "C     NaN\n",
+              "dtype: float64"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>A</th>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>B</th>\n",
+              "      <td>23.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>C</th>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> float64</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 66
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 23\n",
+        "stock = Series([25, 40, 18], index=['Item1', 'Item2', 'Item3'])\n",
+        "stock_dict = stock.to_dict()\n",
+        "stock2 = pd.Series(stock_dict)"
+      ],
+      "metadata": {
+        "id": "wKkxMzsdbX7u"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 24\n",
+        "marks = {'Maths': 88, 'Science': 74, 'English': 69, 'History': 81}\n",
+        "s = pd.Series(marks, index=['History', 'English', 'Science', 'Maths'])\n",
+        "s[s > 70]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 178
+        },
+        "id": "5rSM7wBXbdX8",
+        "outputId": "73118410-2954-43ce-f85a-776255492463"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "History    81\n",
+              "Science    74\n",
+              "Maths      88\n",
+              "dtype: int64"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>History</th>\n",
+              "      <td>81</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Science</th>\n",
+              "      <td>74</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Maths</th>\n",
+              "      <td>88</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> int64</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 68
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 25\n",
+        "rev = Series([1000, 1200, 900], index=['East', 'West', 'North'])\n",
+        "rev.name = 'Revenue'\n",
+        "rev.index.name = 'Branch'"
+      ],
+      "metadata": {
+        "id": "JaGR6SQcbhxD"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 26\n",
+        "north = Series({'Jan': 40, 'Feb': 55, 'Mar': 60})\n",
+        "south = Series({'Feb': 20, 'Mar': 25, 'Apr': 30})\n",
+        "total = north + south"
+      ],
+      "metadata": {
+        "id": "jRXxqbbqblyI"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 27\n",
+        "d = {'Red': 12, 'Blue': 18, 'Green': 24}\n",
+        "labels = ['Green', 'Red', 'Yellow', 'Blue']\n",
+        "result = Series(d, index=labels)\n",
+        "# Yellow\n",
+        "# True\n",
+        "# 'Yellow' is present in the requested index list but does not exist as a key in d\n",
+        "# Blue"
+      ],
+      "metadata": {
+        "id": "oYUn1UZwbuI0"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 28\n",
+        "s = Series([90, 75, 82],index=['Ravi', 'Aman', 'Neha'])\n",
+        "d = s.to_dict()\n",
+        "s2 = Series(d)\n",
+        "# Index of s2: ['Ravi', 'Aman', 'Neha']\n",
+        "# Values of s2: [90, 75, 82]\n",
+        "# Comparison: Yes, both represent the exact same labelled data mapping."
+      ],
+      "metadata": {
+        "id": "7qiPF-vTcJmd"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 29\n",
+        "sales = pd.Series(\n",
+        "    [450, 720, 310, 890], index=['Laptop', 'Phone', 'Tablet', 'Monitor']\n",
+        ")\n",
+        "\n",
+        "print(sales.values)\n",
+        "print(sales.index)\n",
+        "\n",
+        "print(sales['Phone'])\n",
+        "\n",
+        "print(sales[sales > 500])\n",
+        "\n",
+        "print('Tablet' in sales)\n",
+        "\n",
+        "sales_dict = sales.to_dict()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "n4oZZOt5cbak",
+        "outputId": "49fa3e13-a59d-48a5-c73f-e750573e9add"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[450 720 310 890]\n",
+            "Index(['Laptop', 'Phone', 'Tablet', 'Monitor'], dtype='object')\n",
+            "720\n",
+            "Phone      720\n",
+            "Monitor    890\n",
+            "dtype: int64\n",
+            "True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Question 30\n",
+        "data = {'A': 15, 'B': 35, 'C': 25}\n",
+        "s = Series(data, index=['C', 'A', 'D', 'B'])\n",
+        "s.name = 'Observations'\n",
+        "s.index.name = 'Category'\n",
+        "# Index order of s: ['C', 'A', 'D', 'B']\n",
+        "# Label with NaN: 'D'\n",
+        "s[s > 20]\n",
+        "pd.notnull(s)\n",
+        "# Series name: 'Observations'; Index name: 'Category'"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 241
+        },
+        "id": "MuhAxadIcfWf",
+        "outputId": "57db837c-3e2d-4b9a-8f88-8eb7348b3261"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Category\n",
+              "C     True\n",
+              "A     True\n",
+              "D    False\n",
+              "B     True\n",
+              "Name: Observations, dtype: bool"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Observations</th>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Category</th>\n",
+              "      <th></th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>C</th>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>A</th>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>D</th>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>B</th>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> bool</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 74
+        }
+      ]
+    }
+  ]
+}
